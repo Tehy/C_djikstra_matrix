@@ -72,13 +72,15 @@ void dijkstra(int graph[V][V], int src) {
 			// a) reitti ei loydy reittilistalta ja
 			// b) solmusta u on yhteys solmuun v ja
 			// c) etaisyys lahteesta solmun u kautta solmuun v on pienempi kuin solmulle v aiemmin merkitty etaisyys
-			if (true)
+			if (!routes[v] && graph[u][v] && dist[u]+graph[u][v] < dist[v])
 			{
-
+				dist[v] = dist[u] + graph[u][v];
 			}
 		}
-	}
 
+	}
+	// tulostetaan valmis verkko
+	valmisVerkko(dist);
 }
 
 //paaohjelma
